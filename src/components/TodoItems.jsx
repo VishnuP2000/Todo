@@ -3,6 +3,7 @@ import Tick from "../assets/check.png";
 import Circle from "../assets/circle.png";
 import Delete from "../assets/delete.png";
 import Pen from "../assets/pen.png";
+import PropTypes from 'prop-types';
 
 function TodoItems({ text, itemId, seter, Togle, isComplete, Edit, isEditing, togleEditMode }) {
     const [editText, setEditText] = useState(text);
@@ -33,7 +34,7 @@ function TodoItems({ text, itemId, seter, Togle, isComplete, Edit, isEditing, to
                         autoFocus
                     />
                 ) : (
-                    <p className={`ml-3 text-white decoration-slate-900 ${isComplete ? "line-through  text-gray-500 text-gray-600" : ""}`}>
+                    <p className={`ml-3 text-white decoration-slate-900 ${isComplete ? "line-through  text-gray-500 text-gray-400" : ""}`}>
                         {text}
                     </p>
                 )}
@@ -47,5 +48,18 @@ function TodoItems({ text, itemId, seter, Togle, isComplete, Edit, isEditing, to
         </div>
     );
 }
+
+TodoItems.propTypes = {
+    itemId: PropTypes.number,
+    text:PropTypes.string,
+    seter:PropTypes.func,
+    Togle:PropTypes.string,
+    isComplete:PropTypes.string,
+    Edit:PropTypes.string,
+    isEditing:PropTypes.string,
+    togleEditMode:PropTypes.string
+    
+
+  };
 
 export default TodoItems;

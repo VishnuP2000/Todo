@@ -1,6 +1,5 @@
 
 import ToDoList from "./components/ToDoList"
-import TodoItem from "./components/TodoItems"
 function App() {
  
   return (
