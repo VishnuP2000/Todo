@@ -5,7 +5,16 @@ import ToDoItems from "./TodoItems";
 const Todo = () => {
 
     
-    const [todolist, setTodolist] = useState([]);
+    
+
+    const [todolist, setTodolist] = useState(() => {
+
+        const savedTasks = localStorage.getItem("tasks");
+    
+        return savedTasks ? JSON.parse(savedTasks):[];
+    
+     });
+
     const inputRef = useRef();
 
     const add = () => {
@@ -43,10 +52,12 @@ const Todo = () => {
             })
         })
     }
+    
     useEffect(()=>{
-        console.log(todolist)
+        localStorage.setItem("tasks", JSON.stringify(todolist));
     },[todolist])
     
+
 
 
     const Edit = (id, newText) => {
