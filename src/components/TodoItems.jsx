@@ -14,7 +14,7 @@ function TodoItems({ text, itemId, seter, Togle, isComplete, Edit, isEditing, to
 
     const handleEditSubmit = () => {
         if (editText.trim() !== "") {
-            Edit(itemId, editText);
+            Edit(itemId, editText); 
         }
     };
 
@@ -34,7 +34,7 @@ function TodoItems({ text, itemId, seter, Togle, isComplete, Edit, isEditing, to
                         autoFocus
                     />
                 ) : (
-                    <p className={`ml-3 text-white decoration-slate-900 ${isComplete ? "line-through  text-gray-500 text-gray-400" : ""}`}>
+                    <p className={`ml-3 text-white decoration-slate-900 ${isComplete ? "line-through  text-gray-500 text-gray-600" : ""}`}>
                         {text}
                     </p>
                 )}
